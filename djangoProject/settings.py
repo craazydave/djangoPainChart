@@ -124,5 +124,9 @@ STATICFILES_DIRS = [
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
-EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
-EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
+# EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+# EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
+
+EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
+MAILGUN_ACCESS_KEY = '04972330e659e535b700825922b2d108-f7d0b107-5649a676'
+MAILGUN_SERVER_NAME = 'https://api.mailgun.net/v3/sandboxcdbd0ee65de149958a0d2f36d712b287.mailgun.org'
